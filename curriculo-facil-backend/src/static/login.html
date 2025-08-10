@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurrículoFácil - Login/Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+        }
+        .auth-container {
+            background-color: #fff;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+        }
+        .tab-button.active {
+            background-color: #4F46E5;
+            color: #fff;
+        }
+        .tab-button:not(.active):hover {
+            background-color: #f3f4f6;
+        }
+        .input-field {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            margin-top: 0.25rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s ease-in-out;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #4F46E5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+        .submit-button {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #4F46E5;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .submit-button:hover {
+            background-color: #4338CA;
+        }
+        .error-message {
+            color: #EF4444;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">CurrículoFácil</h1>
+        
+        <div class="flex justify-center mb-6">
+            <button id="login-tab" class="tab-button active">Entrar</button>
+            <button id="register-tab" class="tab-button ml-4">Cadastrar</button>
+        </div>
+
+        <div id="login-form" class="tab-content">
+            <form>
+                <input type="email" id="login-email" class="input-field" placeholder="E-mail" required>
+                <input type="password" id="login-password" class="input-field" placeholder="Senha" required>
+                <button type="submit" id="login-submit" class="submit-button">Entrar</button>
+                <p id="login-error" class="error-message hidden"></p>
+            </form>
+        </div>
+
+        <div id="register-form" class="tab-content hidden">
+            <form>
+                <input type="text" id="register-name" class="input-field" placeholder="Nome Completo" required>
+                <input type="email" id="register-email" class="input-field" placeholder="E-mail" required>
+                <input type="password" id="register-password" class="input-field" placeholder="Senha" required>
+                <input type="password" id="register-confirm-password" class="input-field" placeholder="Confirmar Senha" required>
+                <button type="submit" id="register-submit" class="submit-button">Cadastrar</button>
+                <p id="register-error" class="error-message hidden"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const loginTab = document.getElementById("login-tab");
+        const registerTab = document.getElementById("register-tab");
+        const loginForm = document.getElementById("login-form");
+        const registerForm = document.getElementById("register-form");
+
+        loginTab.addEventListener("click", () => {
+            loginTab.classList.add("active");
+            registerTab.classList.remove("active");
+            loginForm.classList.remove("hidden");
+            registerForm.classList.add("hidden");
+        });
+
+        registerTab.addEventListener("click", () => {
+            registerTab.classList.add("active");
+            loginTab.classList.remove("active");
+            registerForm.classList.remove("hidden");
+            loginForm.classList.add("hidden");
+        });
+
+        // Lógica de login e cadastro (será implementada via JavaScript)
+        document.getElementById("login-submit").addEventListener("click", async (e) => {
+            e.preventDefault();
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+            const errorMessage = document.getElementById("login-error");
+            errorMessage.classList.add("hidden");
+
+            try {
+                const response = await fetch("/api/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem("user_token", data.token);
+                    localStorage.setItem("user_email", email);
+                    window.location.href = "/editor.html"; // Redirecionar para o editor após login
+                } else {
+                    errorMessage.textContent = data.message || "Erro ao fazer login.";
+                    errorMessage.classList.remove("hidden");
+                }
+            } catch (error) {
+                errorMessage.textContent = "Erro de conexão. Tente novamente.";
+                errorMessage.classList.remove("hidden");
+                console.error("Erro de rede:", error);
+            }
+        });
+
+        document.getElementById("register-submit").addEventListener("click", async (e) => {
+            e.preventDefault();
+            const name = document.getElementById("register-name").value;
+            const email = document.getElementById("register-email").value;
+            const password = document.getElementById("register-password").value;
+            const confirmPassword = document.getElementById("register-confirm-password").value;
+            const errorMessage = document.getElementById("register-error");
+            errorMessage.classList.add("hidden");
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = "As senhas não coincidem.";
+                errorMessage.classList.remove("hidden");
+                return;
+            }
+
+            try {
+                const response = await fetch("/api/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ name, email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert("Cadastro realizado com sucesso! Faça login para continuar.");
+                    loginTab.click(); // Mudar para a aba de login
+                    document.getElementById("login-email").value = email; // Preencher email no login
+                } else {
+                    errorMessage.textContent = data.message || "Erro ao cadastrar.";
+                    errorMessage.classList.remove("hidden");
+                }
+            } catch (error) {
+                errorMessage.textContent = "Erro de conexão. Tente novamente.";
+                errorMessage.classList.remove("hidden");
+                console.error("Erro de rede:", error);
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+--2025-05-24 15:25:39--  https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80
+Resolving images.unsplash.com (images.unsplash.com)... 151.101.194.208, 151.101.130.208, 151.101.66.208, ...
+Connecting to images.unsplash.com (images.unsplash.com)|151.101.194.208|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 911512 (890K) [image/jpeg]
+Saving to: ‘resume-template.jpg’
+
+resume-template.jpg   0%[                    ]       0  --.-KB/s               resume-template.jpg 100%[===================>] 890.15K  --.-KB/s    in 0.004s  
+
+2025-05-24 15:25:39 (223 MB/s) - ‘resume-template.jpg’ saved [911512/911512]
+

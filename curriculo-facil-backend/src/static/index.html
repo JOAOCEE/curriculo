@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurrículoFácil - Gerador de Currículos Profissionais</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .model-card {
+            transition: all 0.3s ease;
+        }
+        .model-card:hover {
+            transform: scale(1.03);
+        }
+        .cta-gradient {
+            background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+        }
+        /* Fallback para imagens */
+        .image-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #EEF2FF;
+            color: #4F46E5;
+            font-weight: bold;
+            text-align: center;
+            padding: 2rem;
+        }
+        /* Preload de imagens importantes */
+        body::after {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            z-index: -1;
+            content: url('images/hero_section_background.jpeg') 
+                     url('images/templates/template_executivo.jpeg')
+                     url('images/templates/template_moderno.jpeg')
+                     url('images/templates/template_classico.jpeg');
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-indigo-600 font-bold text-2xl">CurrículoFácil</span>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-8">
+                    <a href="#como-funciona" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Como Funciona</a>
+                    <a href="#modelos" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Modelos</a>
+                    <a href="#recursos" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Recursos</a>
+                    <a href="#precos" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Preços</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50">
+                        Entrar
+                    </a>
+                    <a href="editor.html" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                        Criar Currículo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+                        Crie um currículo profissional em minutos
+                    </h1>
+                    <p class="mt-4 text-xl text-indigo-100">
+                        Destaque-se no mercado de trabalho com um currículo otimizado para sistemas ATS e feedback em tempo real.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row sm:space-x-4">
+                        <a href="editor.html" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 shadow-sm">
+                            Criar Currículo Grátis
+                        </a>
+                        <a href="#como-funciona" class="mt-3 sm:mt-0 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70">
+                            Como Funciona
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="images/hero_section_background.jpeg" alt="Exemplo de Currículo" class="rounded-lg shadow-xl" 
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback rounded-lg shadow-xl h-96\'>Modelo de Currículo Profissional<br><small>Crie o seu em minutos</small></div>';">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Como Funciona Section -->
+    <div id="como-funciona" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Como Funciona
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Crie seu currículo profissional em apenas 3 passos simples
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 text-indigo-600 text-xl font-bold">
+                            1
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium text-gray-900">Escolha um modelo</h3>
+                        <p class="mt-2 text-gray-600">
+                            Selecione entre diversos modelos profissionais projetados para destacar suas habilidades.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 text-indigo-600 text-xl font-bold">
+                            2
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium text-gray-900">Preencha suas informações</h3>
+                        <p class="mt-2 text-gray-600">
+                            Adicione suas experiências, formação e habilidades com ajuda do nosso assistente inteligente.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 text-indigo-600 text-xl font-bold">
+                            3
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium text-gray-900">Exporte e compartilhe</h3>
+                        <p class="mt-2 text-gray-600">
+                            Baixe seu currículo em PDF ou compartilhe online com recrutadores e empresas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modelos Section -->
+    <div id="modelos" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Modelos Profissionais
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Escolha entre diversos modelos modernos e otimizados para ATS
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="model-card bg-white rounded-lg shadow overflow-hidden">
+                    <img src="images/templates/template_executivo.jpeg" alt="Modelo Executivo" class="w-full h-64 object-cover"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback h-64\'>Modelo Executivo<br><small>Ideal para cargos de liderança</small></div>';">
+                    <div class="p-4">
+                        <h3 class="text-lg font-medium text-gray-900">Executivo</h3>
+                        <p class="mt-1 text-gray-600">Ideal para cargos de gerência e liderança</p>
+                    </div>
+                </div>
+
+                <div class="model-card bg-white rounded-lg shadow overflow-hidden">
+                    <img src="images/templates/template_moderno.jpeg" alt="Modelo Moderno" class="w-full h-64 object-cover"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback h-64\'>Modelo Moderno<br><small>Design contemporâneo</small></div>';">
+                    <div class="p-4">
+                        <h3 class="text-lg font-medium text-gray-900">Moderno</h3>
+                        <p class="mt-1 text-gray-600">Design contemporâneo para profissionais criativos</p>
+                    </div>
+                </div>
+
+                <div class="model-card bg-white rounded-lg shadow overflow-hidden">
+                    <img src="images/templates/template_classico.jpeg" alt="Modelo Clássico" class="w-full h-64 object-cover"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback h-64\'>Modelo Clássico<br><small>Layout tradicional</small></div>';">
+                    <div class="p-4">
+                        <h3 class="text-lg font-medium text-gray-900">Clássico</h3>
+                        <p class="mt-1 text-gray-600">Layout tradicional para áreas conservadoras</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    Ver todos os modelos
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recursos Section -->
+    <div id="recursos" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Recursos Exclusivos
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Diferenciais que tornam nosso gerador de currículos único
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="feature-card bg-white rounded-lg shadow-sm p-6 flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Otimização para ATS</h3>
+                            <p class="mt-2 text-gray-600">
+                                Nosso sistema analisa seu currículo e sugere melhorias para aumentar suas chances de passar pelos sistemas de triagem automática.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card bg-white rounded-lg shadow-sm p-6 flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Feedback em Tempo Real</h3>
+                            <p class="mt-2 text-gray-600">
+                                Receba pontuações e sugestões instantâneas enquanto cria seu currículo, para garantir o melhor resultado possível.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card bg-white rounded-lg shadow-sm p-6 flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Assistente de Conteúdo</h3>
+                            <p class="mt-2 text-gray-600">
+                                Sugestões inteligentes para cada seção do seu currículo, ajudando você a destacar suas realizações de forma impactante.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card bg-white rounded-lg shadow-sm p-6 flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Design Responsivo</h3>
+                            <p class="mt-2 text-gray-600">
+                                Crie e edite seu currículo em qualquer dispositivo, com uma interface adaptada para desktop, tablet e celular.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preços Section -->
+    <div id="precos" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Planos e Preços
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Escolha o plano ideal para suas necessidades
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900">Gratuito</h3>
+                        <p class="mt-4 text-gray-600">Para quem está começando</p>
+                        <p class="mt-8">
+                            <span class="text-4xl font-extrabold text-gray-900">R$0</span>
+                            <span class="text-base font-medium text-gray-500">/sempre</span>
+                        </p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Acesso a 2 modelos básicos</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Criação de 1 currículo</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Exportação para PDF</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Análise ATS básica</p>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="editor.html" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white border-indigo-600 hover:bg-indigo-50">
+                                Começar Grátis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg border border-indigo-200 overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900">Premium</h3>
+                        <p class="mt-4 text-gray-600">Para profissionais exigentes</p>
+                        <p class="mt-8">
+                            <span class="text-4xl font-extrabold text-gray-900">R$7</span>
+                            <span class="text-base font-medium text-gray-500">/mês</span>
+                        </p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Acesso a todos os modelos</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Currículos ilimitados</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Otimização ATS avançada</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Feedback detalhado</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Recursos educacionais</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Atualizações automáticas</p>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="#" id="premium-subscribe-button" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                                Assinar Premium
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Depoimentos Section -->
+    <div class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    O que nossos usuários dizem
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Histórias reais de pessoas que conseguiram emprego com nosso gerador de currículos
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center">
+                                <span class="text-indigo-600 font-bold">MS</span>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Maria Silva</h4>
+                                <p class="text-gray-600">Designer Gráfica</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            "Consegui uma entrevista apenas 2 dias depois de enviar meu currículo criado com o CurrículoFácil. O recrutador elogiou especificamente o layout e organização!"
+                        </p>
+                        <div class="mt-4 flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center">
+                                <span class="text-indigo-600 font-bold">JP</span>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">João Paulo</h4>
+                                <p class="text-gray-600">Desenvolvedor Web</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            "A análise ATS me ajudou a otimizar meu currículo para palavras-chave específicas da minha área. Recebi 3 chamadas para entrevistas em uma semana!"
+                        </p>
+                        <div class="mt-4 flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center">
+                                <span class="text-indigo-600 font-bold">CA</span>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Carolina Almeida</h4>
+                                <p class="text-gray-600">Analista de Marketing</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            "Estava há meses tentando mudar de emprego sem sucesso. Com o currículo novo, consegui uma posição melhor em apenas 3 semanas. Vale cada centavo!"
+                        </p>
+                        <div class="mt-4 flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-gradient py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                Pronto para impulsionar sua carreira?
+            </h2>
+            <p class="mt-4 text-xl text-indigo-100 max-w-2xl mx-auto">
+                Crie seu currículo profissional hoje mesmo e aumente suas chances de conseguir o emprego dos seus sonhos.
+            </p>
+            <div class="mt-8">
+                <a href="editor.html" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 shadow-sm">
+                    Criar Meu Currículo Agora
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">CurrículoFácil</h3>
+                    <p class="text-gray-400">
+                        Ajudando profissionais a conquistarem as melhores oportunidades desde 2023.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Início</a></li>
+                        <li><a href="#como-funciona" class="hover:text-white">Como Funciona</a></li>
+                        <li><a href="#modelos" class="hover:text-white">Modelos</a></li>
+                        <li><a href="#recursos" class="hover:text-white">Recursos</a></li>
+                        <li><a href="#precos" class="hover:text-white">Preços</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Recursos</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Dicas de Carreira</a></li>
+                        <li><a href="#" class="hover:text-white">Guia de Entrevistas</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contato</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Suporte</a></li>
+                        <li><a href="#" class="hover:text-white">Termos de Uso</a></li>
+                        <li><a href="#" class="hover:text-white">Política de Privacidade</a></li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2025 CurrículoFácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Verificação de imagens e fallbacks
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar se as imagens carregaram corretamente
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (!img.complete || img.naturalHeight === 0) {
+                    // Se a imagem não carregou, o evento onerror será acionado
+                    img.onerror();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+    <!-- Script para Stripe Checkout -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const subscribeButton = document.getElementById('premium-subscribe-button');
+            const stripe = Stripe('pk_test_...'); // Substituir pela sua chave publicável REAL do Stripe (ou variável de ambiente)
+
+            if (subscribeButton) {
+                subscribeButton.addEventListener('click', async function(event) {
+                    event.preventDefault();
+                    subscribeButton.textContent = 'Processando...';
+                    subscribeButton.disabled = true;
+
+                    // Obter token de autenticação (exemplo: do localStorage)
+                    const token = localStorage.getItem('authToken'); // Ajuste conforme o local onde você guarda o token
+
+                    if (!token) {
+                        alert('Você precisa estar logado para assinar o plano Premium.');
+                        // Redirecionar para login ou mostrar modal de login
+                        // window.location.href = '/login.html'; // Exemplo
+                        subscribeButton.textContent = 'Assinar Premium';
+                        subscribeButton.disabled = false;
+                        return;
+                    }
+
+                    try {
+                        // Chamar o backend para criar a sessão de checkout
+                        const response = await fetch('/api/create-checkout-session', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`
+                            },
+                            // O corpo pode ser vazio se o backend identificar o usuário pelo token
+                            // body: JSON.stringify({})
+                        });
+
+                        if (!response.ok) {
+                            const errorData = await response.json();
+                            throw new Error(errorData.message || 'Falha ao iniciar assinatura.');
+                        }
+
+                        const session = await response.json();
+
+                        // Redirecionar para o Stripe Checkout
+                        const result = await stripe.redirectToCheckout({
+                            sessionId: session.sessionId
+                        });
+
+                        if (result.error) {
+                            // Se o redirecionamento falhar (raro), mostrar erro
+                            alert(result.error.message);
+                            subscribeButton.textContent = 'Assinar Premium';
+                            subscribeButton.disabled = false;
+                        }
+                    } catch (error) {
+                        console.error('Erro ao criar sessão de checkout:', error);
+                        alert('Ocorreu um erro ao tentar iniciar a assinatura. Tente novamente.');
+                        subscribeButton.textContent = 'Assinar Premium';
+                        subscribeButton.disabled = false;
+                    }
+                });
+            }
+
+            // Adicionar lógica para o botão de Gerenciar Assinatura (se houver)
+            const manageSubscriptionButton = document.getElementById('manage-subscription-button'); // Criar este botão se necessário
+            if (manageSubscriptionButton) {
+                 manageSubscriptionButton.addEventListener('click', async function(event) {
+                    event.preventDefault();
+                    manageSubscriptionButton.textContent = 'Carregando...';
+                    manageSubscriptionButton.disabled = true;
+
+                    const token = localStorage.getItem('authToken');
+                    if (!token) {
+                        alert('Você precisa estar logado para gerenciar sua assinatura.');
+                        manageSubscriptionButton.textContent = 'Gerenciar Assinatura';
+                        manageSubscriptionButton.disabled = false;
+                        return;
+                    }
+
+                    try {
+                        const response = await fetch('/api/create-portal-session', {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': `Bearer ${token}`
+                            }
+                        });
+
+                        if (!response.ok) {
+                            const errorData = await response.json();
+                            throw new Error(errorData.message || 'Falha ao acessar portal.');
+                        }
+
+                        const portalSession = await response.json();
+                        // Redirecionar para o Portal do Cliente Stripe
+                        window.location.href = portalSession.url;
+
+                    } catch (error) {
+                        console.error('Erro ao criar sessão do portal:', error);
+                        alert('Ocorreu um erro ao tentar acessar o portal de gerenciamento. Tente novamente.');
+                        manageSubscriptionButton.textContent = 'Gerenciar Assinatura';
+                        manageSubscriptionButton.disabled = false;
+                    }
+                 });
+            }
+
+        });
+    </script>
+</body>
+
+
+    <!-- Donation Section -->
+    <div class="py-16 bg-gray-100 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Apoie Nosso Projeto
+            </h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                Gosta do CurrículoFácil? Considere fazer uma pequena doação para nos ajudar a manter e melhorar o serviço!
+            </p>
+            <div class="mt-8">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 shadow-sm">
+                    <i class="fas fa-heart mr-2"></i> Fazer uma Doação (Pix/PagSeguro)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <p>&copy; 2023 CurrículoFácil. Todos os direitos reservados.</p>
+            <p class="mt-2 text-sm">
+                <a href="#" class="hover:text-white">Política de Privacidade</a> | 
+                <a href="#" class="hover:text-white">Termos de Serviço</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</body>
+</html>

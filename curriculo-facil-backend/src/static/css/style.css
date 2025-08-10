@@ -1,0 +1,631 @@
+/* Estilos personalizados para CurrículoFácil */
+
+/* ===== ANIMAÇÕES PARA CONVERSÃO ===== */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+        transform: scale(1.02);
+    }
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(-50px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(0);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ===== BOTÕES PREMIUM OTIMIZADOS ===== */
+.premium-btn {
+    background: linear-gradient(-45deg, #FF5F6D, #FFC371, #FF5F6D, #FFC371);
+    background-size: 400% 400%;
+    animation: gradient-shift 3s ease infinite;
+    color: white;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.premium-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 95, 109, 0.3);
+    animation: pulse-glow 2s infinite;
+}
+
+.premium-btn:active {
+    transform: translateY(0);
+}
+
+.premium-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.premium-btn:hover::before {
+    left: 100%;
+}
+
+/* CTA Principal */
+.cta-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.cta-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-primary:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Botões secundários com efeito hover */
+.btn-secondary {
+    background: transparent;
+    color: #4F46E5;
+    border: 2px solid #4F46E5;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #4F46E5;
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn-secondary:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+.btn-secondary:hover::before {
+    left: 0;
+}
+
+/* ===== INDICADORES DE URGÊNCIA ===== */
+.urgency-badge {
+    background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    animation: pulse-glow 2s infinite;
+    display: inline-block;
+}
+
+/* Contador social animado */
+.social-counter {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slide-up 0.6s ease-out;
+}
+
+.social-counter .count {
+    font-weight: 700;
+    color: #10B981;
+    transition: all 0.3s ease;
+}
+
+.social-counter:hover .count {
+    transform: scale(1.1);
+}
+
+/* ===== CARDS OTIMIZADOS ===== */
+.feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4F46E5, #7C3AED, #EC4899);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Pricing cards otimizados */
+.pricing-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card.featured {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.pricing-card.featured::before {
+    content: 'MAIS POPULAR';
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: #FF6B6B;
+    color: white;
+    padding: 8px 40px;
+    font-size: 12px;
+    font-weight: 700;
+    transform: rotate(45deg);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Premium status indicators */
+.premium-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.premium-status.active {
+  background-color: #10B981;
+  color: white;
+}
+
+.premium-status.inactive {
+  background-color: #6B7280;
+  color: white;
+}
+
+/* Premium badges */
+.premium-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #4F46E5;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0 0 0 0.375rem;
+  z-index: 10;
+}
+
+/* Premium overlays */
+.premium-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  z-index: 5;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #f3f4f6;
+  border-top: 2px solid #4F46E5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Payment messages */
+#payment-error {
+  display: none;
+  background-color: #FEE2E2;
+  color: #DC2626;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  margin: 1rem 0;
+  border: 1px solid #FECACA;
+}
+
+#payment-success {
+  display: none;
+  background-color: #D1FAE5;
+  color: #065F46;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  margin: 1rem 0;
+  border: 1px solid #A7F3D0;
+}
+
+/* Template options */
+.template-option {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.template-option:hover {
+  border-color: #4F46E5;
+  transform: scale(1.02);
+}
+
+.template-option.selected {
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Disabled states */
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+/* Resume limit display */
+.resume-limit-display {
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin-top: 0.5rem;
+}
+
+/* ATS Analysis */
+.ats-analysis {
+  background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.ats-score {
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ats-premium-feature {
+  background: white;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-left: 4px solid #4F46E5;
+}
+
+/* ===== PROGRESS BARS ANIMADOS ===== */
+.progress-bar {
+    background: #E5E7EB;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 8px;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10B981, #059669);
+    border-radius: 10px;
+    transition: width 1s ease-out;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* ===== TOOLTIPS MELHORADOS ===== */
+.tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1F2937;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #1F2937;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* ===== BADGES DE STATUS ===== */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.premium {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #8B4513;
+}
+
+.status-badge.free {
+    background: #E5E7EB;
+    color: #6B7280;
+}
+
+.status-badge.active {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+/* ===== MICRO-INTERAÇÕES ===== */
+.clickable {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clickable:hover {
+    transform: scale(1.02);
+}
+
+.clickable:active {
+    transform: scale(0.98);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .premium-badge {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.375rem;
+  }
+  
+  .premium-overlay {
+    font-size: 0.875rem;
+  }
+  
+  .template-option {
+    margin-bottom: 1rem;
+  }
+  
+  .premium-btn,
+  .cta-primary {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .feature-card {
+    margin-bottom: 16px;
+  }
+  
+  .pricing-card {
+    margin-bottom: 24px;
+  }
+}
+
+/* Animation for premium unlock */
+.unlock-premium-button {
+  transition: opacity 0.3s ease;
+}
+
+.unlock-premium-button:hover {
+  opacity: 1 !important;
+}
+
+/* Subscription status indicator */
+.subscription-indicator {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.subscription-indicator.premium {
+  background-color: #10B981;
+  color: white;
+}
+
+.subscription-indicator.free {
+  background-color: #6B7280;
+  color: white;
+}
+
+/* ===== ANIMAÇÕES DE ENTRADA ===== */
+.animate-fade-in {
+    animation: slide-up 0.6s ease-out;
+}
+
+.animate-bounce-in {
+    animation: bounce-in 0.8s ease-out;
+}
+
+/* ===== ACCESSIBILITY & DARK MODE ===== */
+.focus-visible:focus {
+    outline: 2px solid #4F46E5;
+    outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .feature-card {
+        background: #1F2937;
+        color: white;
+        border-color: #374151;
+    }
+    
+    .tooltip::before {
+        background: #374151;
+    }
+    
+    .tooltip::after {
+        border-top-color: #374151;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
